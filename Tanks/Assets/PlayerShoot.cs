@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 spawnLoation = transform.forward + bulletPos.position;
+        Vector3 spawnLoation = bulletPos.position + (bulletPos.forward/2);
         if (Input.GetMouseButtonDown(0))
             Instantiate(bullet, spawnLoation, bulletPos.rotation);
         

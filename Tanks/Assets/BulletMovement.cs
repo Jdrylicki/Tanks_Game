@@ -15,13 +15,24 @@ public class BulletMovement : MonoBehaviour
         Move(1);
         
     }
+
     void Move(int dir)
     {
         Vector3 movement = transform.forward * dir * speed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }
 
-    
+    private void OnCollisionEnter(Collision coll)
+    {
+        ContactPoint contact;
+        if (coll.gameObject.name.Contains("Wall"))
+        {
+            contact = coll.contacts[0];
 
-    
+ 
+            rb.velocity = Vector3.Reflect(transform.forward, contact.normal);
+        }
+    }
+
+
 }
