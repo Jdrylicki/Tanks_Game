@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
 
     public Rigidbody rb;
@@ -12,25 +12,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-            
+
     }
 
     void Update()
     {
-        
+
 
     }
     // Update is called once per frame
     //"Fixed"Update works better with unity and physics
     void FixedUpdate()
     {
-        if (Input.GetKey("w"))
+        if (Input.GetKey("i"))
             Move(1);
-        if (Input.GetKey("s"))
+        if (Input.GetKey("k"))
             Move(-1);
-        if (Input.GetKey("d"))
+        if (Input.GetKey("l"))
             Turn(1);
-        if (Input.GetKey("a"))
+        if (Input.GetKey("j"))
             Turn(-1);
 
     }
