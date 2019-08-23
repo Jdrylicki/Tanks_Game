@@ -37,6 +37,9 @@ public class BulletMovement : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 Destroy(hit.collider.gameObject);
+            } else if (hit.collider.gameObject.name.Contains("Bullet"))
+            {
+                Destroy(this.gameObject);
             }
         }
     }
