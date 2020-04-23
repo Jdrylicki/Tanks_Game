@@ -21,7 +21,7 @@ public class BulletMovement : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .05f))
+        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .25f))
         {
             if (hit.collider.gameObject.name.Contains("Wall") && numRicochet > 0)
             {
@@ -33,7 +33,7 @@ public class BulletMovement : MonoBehaviour
             else if(numRicochet <= 0)
                 Destroy(this.gameObject);
 
-            if (hit.collider.gameObject.name.Contains("Player"))
+            if (hit.collider.gameObject.name.Contains("Tank"))
             {
                 Destroy(this.gameObject);
                 Destroy(hit.collider.gameObject);
